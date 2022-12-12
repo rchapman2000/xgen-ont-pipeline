@@ -200,5 +200,5 @@ workflow {
     Generate_Consensus_Genome( Call_Variants.out[0], baseDir, outDir, refData, params.minCov, Call_Variants.out[2] )
 
     // Writes statistics to an analysis summary file.
-    Write_Summary( Create_Draft_Genome.out[2], outDir )
+    Write_Summary( Generate_Consensus_Genome.out[2], outDir )
 }

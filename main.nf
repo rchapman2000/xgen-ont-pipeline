@@ -190,7 +190,7 @@ workflow {
     XGen_Primer_Clip( MiniMap2_Alignment.out[0], primerfile, outDir, params.threads, MiniMap2_Alignment.out[1] )
 
     // Polishes the alignment using medaka consensus.
-    Medaka_Consensus( Swift_Primer_Clip.out[0], model, outDir, Swift_Primer_Clip.out[1] )
+    Medaka_Consensus( XGen_Primer_Clip.out[0], model, outDir, XGen_Primer_Clip.out[1] )
 
     // Calls variants using medaka and longshot and filters them.
     Call_Variants( Medaka_Consensus.out[0], baseDir, outDir, refData, params.minCov, Medaka_Consensus.out[1] )
